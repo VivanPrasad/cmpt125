@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 int  NextGen(char **lifeBoard, int numRowsInBoard, int numColsInBoard)
 {
     /*This program takes the lifeboard and calculates
@@ -45,55 +45,29 @@ int  NextGen(char **lifeBoard, int numRowsInBoard, int numColsInBoard)
                individually check each adjacent element to see 
                if it is an organism 
                increment the counter if it is  */
-            if (lifeBoard[indexrow - 1][indexcol - 1] == organism)
-            {
-                neighborcount++;
-            }
-            if (lifeBoard[indexrow][indexcol - 1] == organism)
-            {
-                neighborcount++;
-            }
-            if (lifeBoard[indexrow + 1][indexcol - 1] == organism)
-            {
-                neighborcount++;
-            }
-            if (lifeBoard[indexrow - 1][indexcol] == organism)
-            {
-                neighborcount++;
-            }
-            if (lifeBoard[indexrow + 1][indexcol] == organism)
-            {
-                neighborcount++;
-            }
-            if (lifeBoard[indexrow - 1][indexcol + 1] == organism)
-            {
-                neighborcount++;
-            }
-            if (lifeBoard[indexrow][indexcol + 1] == organism)
-            {
-                neighborcount++;
-            }
-            if (lifeBoard[indexrow + 1][indexcol + 1] == organism)
-            {
-                neighborcount++;
+            for (int i=-1;i<=1;i++) {
+                for (int k=-1;k<=1;k++) {
+                    if (lifeBoard[indexrow+i][indexcol+k] == organism) {
+                        neighborcount++;}
+                }
             }
 
             /* apply the rules to determine if this location 
                should hold an organism in the next generation */ 
+            switch (neighborcount)
+            {
+                case 2: 
+                    nextGenBoard[indexrow][indexcol] = 
+                        lifeBoard[indexrow][indexcol];
+                    break;
+                case 3: 
+                    nextGenBoard[indexrow][indexcol] = organism;
+                    break;
+                default:
+                    nextGenBoard[indexrow][indexcol] = '.';
+                    break;
+            }
 
-            if (neighborcount == 3)
-            {
-                nextGenBoard[indexrow][indexcol] = organism;
-            }
-            else if (neighborcount == 2)
-            {
-                nextGenBoard[indexrow][indexcol] =
-                    lifeBoard[indexrow][indexcol];
-            }
-            else
-            {
-                nextGenBoard[indexrow][indexcol] = '.';
-            }
         }
     }
 
@@ -115,4 +89,9 @@ int  NextGen(char **lifeBoard, int numRowsInBoard, int numColsInBoard)
 	free(nextGenBoard[0]);
 	free(nextGenBoard);
 	return 0;
+}
+int main(void)
+{
+    NextGen();
+    return 0;
 }

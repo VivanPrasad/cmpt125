@@ -1,5 +1,5 @@
 {
-  "C_Cpp.default.compilerPath": "c:\\Users\\vivan\\OneDrive\\Documents\\GitHub\\cmpt125\\Test Programs\\first_program.c",
+  "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe",
   "cmake.configureOnOpen": true,
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "gcc",
@@ -59,7 +59,11 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
+    "*.c": "c",
     "math.h": "c",
-    "mgmtapi.h": "c"
-  }
+    "mgmtapi.h": "c",
+    "stdio.h": "c",
+    "stdlib.h": "c"
+  },
+  "C_Cpp.intelliSenseEngineFallback": "disabled"
 }

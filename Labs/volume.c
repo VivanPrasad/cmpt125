@@ -2,7 +2,7 @@
 double calculateVolume(double radius, double length)
 {
     //constant value for PI
-    const double PI = 3.141592653;
+    const double PI = 3.14159;
     return (PI * radius * radius * length);
 }
 int main(void) 

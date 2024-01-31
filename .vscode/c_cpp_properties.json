@@ -3,7 +3,7 @@
         {
             "name": "windows-gcc-x64",
             "includePath": [
-                "c:/Users/vivan/Documents/GitHub/cmpt125/**"
+                "C:\\MinGW\\include"
             ],
             "defines": [
                 "_DEBUG",
@@ -11,28 +11,37 @@
                 "_UNICODE"
             ],
             "intelliSenseMode": "windows-gcc-x64",
-            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "browse": {
                 "path": [
                     "C:/MinGW/bin/"
                 ],
                 "limitSymbolsToIncludedHeaders": true
             },
-            "compilerPathInCppPropertiesJson": "C:/MinGW/bin/gcc.exe",
             "mergeConfigurations": false
         },
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "c:/Users/vivan/OneDrive/Documents/GitHub/cmpt125/**",
+                "c:/MinGW/include/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:/MinGW/bin/gcc.exe",
-            "intelliSenseMode": "windows-gcc-x64"
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "intelliSenseMode": "windows-gcc-x64",
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [
+                    "c:/Users/vivan/OneDrive/Documents/GitHub/cmpt125/**",
+                    "c:/MinGW/include/**",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
         }
     ],
     "version": 4
