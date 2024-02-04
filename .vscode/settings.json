@@ -63,7 +63,13 @@
     "math.h": "c",
     "mgmtapi.h": "c",
     "stdio.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "cctype": "c",
+    "random": "c",
+    "string.h": "c",
+    "io.h": "c",
+    "iosfwd": "c",
+    "conio.h": "c"
   },
   "C_Cpp.intelliSenseEngineFallback": "disabled"
 }
