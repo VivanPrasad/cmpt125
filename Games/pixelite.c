@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
-#include <windows.h>
-#include <stdbool.h>
+#include <conio.h> //
+#include <windows.h> // For terminal manipulation
+#include <stdbool.h> // For boolean values
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -11,51 +11,71 @@
 #define KEY_ESC 27
 #define KEY_ENTER 13
 
-#define WIDTH 24
-#define HEIGHT 8
+// WORLD TILESET
+#define GRASS_TILE 34 // ,
+#define STONE_TILE 45 // -
+#define WATER_TILE 126 // ~
+#define TREE_TILE 190 // ×
+#define BRICK_TILE 35 // #
+#define PLAYER_TILE 64 // @ 
 
-// TILESET
-#define DIRT_TILE 46 // "."
-#define WATER_TILE
-#define PLAYER_TILE 64
+#define WHITE "\e[0;37m"
+#define GREY "\e[38;5;248m"
+#define GREEN "\e[0;32m"
+#define BLUE "\e[0;34m"
+#define RED "\e[0;33m"
 
+char world[32][16]; 
+short WIDTH = 32; short HEIGHT = 16;
+short type=0, location=0, size=0;
 
-
-char world[WIDTH][HEIGHT]; 
-enum worldSize {
-    MINI=0,
-    NORMAL=1,
-    GRAND=2,
-};
 typedef struct Player{
     int x;
     int y;
-    int health;
 } Player;
 
-int setupWorld(void){
-    for (int r=0;r<HEIGHT;r++){
-        for (int c=0;c<WIDTH;c++){
-            world[r][c] = DIRT_TILE;}}
+int runGame(void);
+int generateWorld(int type, int size){
+    WIDTH = 16 + (8*size);
+    HEIGHT = 8 + (4*size);
+    switch (type){
+        case 0: // Forest
+            for (int r=0;r<HEIGHT;r++){
+                for (int c=0;c<WIDTH;c++){
+                    world[c][r] = GRASS_TILE;}}
+            break;
+        case 1: // Shore
+            for (int r=0;r<HEIGHT;r++){
+                for (int c=0;c<WIDTH;c++){
+                    world[c][r] = WATER_TILE;}}
+            break;
+        case 2: // Mountain
+            for (int r=0;r<HEIGHT;r++){
+                for (int c=0;c<WIDTH;c++){
+                    world[c][r] = STONE_TILE;}}
+            break;
+        default:
+            break;
+    }
+    runGame();
     return 0;
 }
-Player * setupPlayer(void){
+Player * spawnPlayer(int ix, int iy){
     Player *newPlayer;
     newPlayer = (Player*)malloc(sizeof(Player));
 
-    newPlayer->health = 3;
-    newPlayer->x=(WIDTH/2);
-    newPlayer->y=(HEIGHT/2);
+    newPlayer->x = ix;
+    newPlayer->y = iy;
     return newPlayer;
 }
 
-void setCursor(int x, int y)
+void setCursor(int x, int y) // Move the terminal cursor to a position
 {
-    COORD c = { x, y };  
-    SetConsoleCursorPosition(  GetStdHandle(STD_OUTPUT_HANDLE) , c);
+    COORD c = {x, y};
+    SetConsoleCursorPosition( GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
 
-void hideCursor()
+void hideCursor() // Hide the terminal cursor
 {
    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
    CONSOLE_CURSOR_INFO info;
@@ -64,7 +84,7 @@ void hideCursor()
    SetConsoleCursorInfo(consoleHandle, &info);
 }
 
-char getTile(int x, int y) {
+char getTile(int x, int y) { // Returns the tile character
     return world[x][y];
 }
 void setText(int x, int y, char text) {
@@ -74,27 +94,45 @@ void setText(int x, int y, char text) {
 
 void setTile(int x, int y, char tile) {
     world[x][y] = tile;
+    switch(world[x][y]){
+        case GRASS_TILE:
+            printf(GREEN"%c",GRASS_TILE);
+            break;
+        case WATER_TILE:
+            printf(BLUE"%c",WATER_TILE);
+            break;
+        case STONE_TILE:
+            printf(GREY"%c",STONE_TILE);
+            break;
+        default:
+            printf(WHITE"%c",world[x][y]);
+            break;
+            }
     setText(x,y,tile);
 }
-int display(Player *player){
+void movePlayer(int x, int y) {
+    setCursor(x,y);
+    printf(WHITE "%c",PLAYER_TILE);
+}
+int refreshWorld(Player *player){
     for (int r=0;r<HEIGHT;r++){
         for (int c=0;c<WIDTH;c++){
-            if (r==player->y && c==player->x) printf("%c",PLAYER_TILE);
-            else printf("%c",world[r][c]);}
-        printf("\n");}
+            setTile(r,c,world[r][c]);
+        }
+        printf("\n");
+    }
+    movePlayer(player->x,player->y);
     return 0;
 }
 
 int runGame(void) {
     char key;
-    setupWorld();
-    Player *player = setupPlayer();
+    Player *player = spawnPlayer(4,4);
     system("cls");
-    display(player);
+    refreshWorld(player);
     do{
         key = getch();
         hideCursor();
-        setTile(player->x,player->y,DIRT_TILE);
         switch (key){
             case KEY_RIGHT:
                 player->x = (player->x + 1) % WIDTH;
@@ -113,34 +151,56 @@ int runGame(void) {
             default:
                 continue;
         }
-        setTile(player->x,player->y,PLAYER_TILE);
+        movePlayer(player->x,player->y);
     } while (1==1);
 }
 
-int createWorld(void) {
-    bool running = true;
-    const char worldTypes[4][9] = {"Forest","Shore","Desert","Mountain"};
-    const char worldDifficulties[3][9] = {"Kind","Moderate","Harsh"};
-    const char worldSizes[3][9] = {"Tiny","Normal","Grand"};
+/* Save Data
+<type> <location> <size>
+<world data>
+*/
+int loadSave(void) {
+    FILE *save;
+    char saveName[20];
+    
+    short type, location, size;
+    system("cls");
+    while (save == NULL){
+        printf("Enter Save File Name: ");
+        scanf("%s", saveName);
+        save = fopen(saveName,"r");
+    }
 
-    int selected = 0;
-    int type = 0;
-    int difficulty = 0;
-    int size = 0;
+    return 0;
+}
+
+int saveWorld(void) {
+    FILE *export;
+    export = fopen("save.txt","w");
+    fprintf(export, "%d %d %d\n",type,location,size);
+    fclose(export);
+    return 0;
+}
+
+int createWorld(void) {
+    const char worldTypes[3][11] = {"Forest    ","Shore     ","Mountain  "};
+    const char worldSizes[3][10] = {"Tiny  ","Normal","Grand "};
+    const char settings[3][10] = {"Type:","Size:","Create"};
+    short selected=0;
+    bool running = TRUE;
     char key;
+    system("cls");
+    printf("Create New World\n\n>Type: %s\n Size: %s\n Create World",worldTypes[type],worldSizes[size]);
+    hideCursor();
     do{
-        system("cls");
-        hideCursor();
-        printf("Create New World\n\n Type: %s\n Location: %s\n Size: %s\n Create World",worldTypes[type],worldDifficulties[difficulty],worldSizes[size]);
-        key = getch();
-        hideCursor();
-        for (int r=0;r<=3;r++){
-            setText(0,r+2,32);
+        for (int r=0;r<=2;r++){
+            setText(0,r+2,(r==selected) ? 62 : 32); //empty space if not selected
         }
         setText(0,selected+2,62);
+        key = getch();
         switch (key){
             case KEY_DOWN:
-                if (selected < 3) selected += 1;
+                if (selected < 2) selected += 1;
                 break;
             case KEY_UP:
                 if (selected > 0) selected -= 1;
@@ -150,22 +210,21 @@ int createWorld(void) {
                 exit(0);
                 break;
             case KEY_ENTER:
+                setCursor(1,selected+2);
                 switch (selected) {
                     case 0:
-                        type = (type + 1) % 4;
+                        type = (type + 1) % 3;
+                        printf("%s %s", settings[selected], worldTypes[type]);
                         break;
                     case 1:
-                        difficulty = (difficulty + 1) % 3;
+                        size = (size + 1) % 3;
+                        printf("%s %s", settings[selected], worldSizes[size]);
                         break;
                     case 2:
-                        size = (size + 1) % 3;
-                        break;
-                    case 3:
                         running = FALSE;
-                        runGame();
+                        generateWorld(type,size);
                         break;
-                    default:
-                        break;
+                    default: break;
                 }
                 break;
             default:
@@ -176,16 +235,16 @@ int createWorld(void) {
 int titleScreen(void) {
     system("cls");
     hideCursor();
-    printf("Pixelite\n\n>New\n Load\n Exit");
+    printf("Pixelite\n\n New\n Load\n Exit");
     bool running = true;
     int selected = 0;
     char key;
     do{
-        key = getch();
-        hideCursor();
         for (int r=0;r<=2;r++){
             setText(0,r+2,32);
         }
+        setText(0,selected+2,62);
+        key = getch();
         switch (key){
             case KEY_DOWN:
                 if (selected < 2) selected += 1;
@@ -200,10 +259,11 @@ int titleScreen(void) {
             case KEY_ENTER:
                 switch (selected) {
                     case 0:
-                    case 1:
                         running = FALSE;
                         createWorld();
                         break;
+                    case 1:
+                        loadSave();
                     case 2:
                         running = FALSE;
                         exit(0);
@@ -215,10 +275,8 @@ int titleScreen(void) {
             default:
                 break;
         }
-        setText(0,selected+2,62);
     } while(running == TRUE);
 }
 int main(void){
     titleScreen();
-    return 0;
-}
+    return 0;}
