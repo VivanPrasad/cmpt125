@@ -26,7 +26,7 @@
 #define RED "\e[0;33m"
 
 char world[32][16]; 
-short WIDTH = 32; short HEIGHT = 16;
+short WIDTH = 16; short HEIGHT = 8;
 short type=0, location=0, size=0;
 
 typedef struct Player{
@@ -94,6 +94,7 @@ void setText(int x, int y, char text) {
 
 void setTile(int x, int y, char tile) {
     world[x][y] = tile;
+    setCursor(x,y);
     switch(world[x][y]){
         case GRASS_TILE:
             printf(GREEN"%c",GRASS_TILE);
@@ -107,32 +108,30 @@ void setTile(int x, int y, char tile) {
         default:
             printf(WHITE"%c",world[x][y]);
             break;
-            }
-    setText(x,y,tile);
+    }
 }
 void movePlayer(int x, int y) {
     setCursor(x,y);
-    printf(WHITE "%c",PLAYER_TILE);
-}
+    printf(WHITE"%c",PLAYER_TILE);}
 int refreshWorld(Player *player){
     for (int r=0;r<HEIGHT;r++){
         for (int c=0;c<WIDTH;c++){
-            setTile(r,c,world[r][c]);
+            setTile(c,r,world[c][r]);
         }
-        printf("\n");
-    }
-    movePlayer(player->x,player->y);
-    return 0;
-}
+        printf("\n");}
+    return 0;}
 
 int runGame(void) {
+    bool running = TRUE;
     char key;
     Player *player = spawnPlayer(4,4);
     system("cls");
     refreshWorld(player);
+    movePlayer(player->x,player->y);
     do{
         key = getch();
         hideCursor();
+        setTile(player->x,player->y,world[player->x][player->y]);
         switch (key){
             case KEY_RIGHT:
                 player->x = (player->x + 1) % WIDTH;
@@ -148,11 +147,16 @@ int runGame(void) {
                 if (player->y == 0) player->y = HEIGHT-1;
                 else player->y -= 1;
                 break;
+            case KEY_ESC:
+                system("cls");
+                exit(0);
+                running = FALSE;
+                break;
             default:
                 continue;
         }
         movePlayer(player->x,player->y);
-    } while (1==1);
+    } while (running==TRUE);
 }
 
 /* Save Data
@@ -162,15 +166,13 @@ int runGame(void) {
 int loadSave(void) {
     FILE *save;
     char saveName[20];
-    
+
     short type, location, size;
     system("cls");
     while (save == NULL){
         printf("Enter Save File Name: ");
         scanf("%s", saveName);
-        save = fopen(saveName,"r");
-    }
-
+        save = fopen(saveName,"r");}
     return 0;
 }
 
@@ -207,6 +209,7 @@ int createWorld(void) {
                 break;
             case KEY_ESC:
                 running = FALSE;
+                system("cls");
                 exit(0);
                 break;
             case KEY_ENTER:
@@ -222,6 +225,7 @@ int createWorld(void) {
                         break;
                     case 2:
                         running = FALSE;
+                        system("cls");
                         generateWorld(type,size);
                         break;
                     default: break;
@@ -254,29 +258,31 @@ int titleScreen(void) {
                 break;
             case KEY_ESC:
                 running = FALSE;
+                system("cls");
                 exit(0);
                 break;
             case KEY_ENTER:
                 switch (selected) {
                     case 0:
                         running = FALSE;
+                        system("cls");
                         createWorld();
                         break;
                     case 1:
                         loadSave();
+                        break;
                     case 2:
                         running = FALSE;
+                        system("cls");
                         exit(0);
                         break;
-                    default:
-                        break;
-                }
-                break;
-            default:
-                break;
+                    default: break;
+                } break;
+            default: break;
         }
     } while(running == TRUE);
 }
 int main(void){
     titleScreen();
-    return 0;}
+    return 0;
+}
