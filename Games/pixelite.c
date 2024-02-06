@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h> //
+#include <dirent.h> // For opening directories
 #include <windows.h> // For terminal manipulation
 #include <stdbool.h> // For boolean values
+#include <string.h> // For string functions
 
+// KEY BINDS (6)
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
@@ -12,47 +15,90 @@
 #define KEY_ENTER 13
 
 // WORLD TILESET
-#define GRASS_TILE 34 // ,
+#define GRASS_TILE 46 // "
 #define STONE_TILE 45 // -
+#define JEWEL_TILE 
 #define WATER_TILE 126 // ~
-#define TREE_TILE 190 // ×
+#define SEED_TILE 44 // ,
+#define CAVE_TILE 
+#define TREE_TILE 84 // T
 #define BRICK_TILE 35 // #
-#define PLAYER_TILE 64 // @ 
+#define VOID_TILE 32 // space
 
-#define WHITE "\e[0;37m"
-#define GREY "\e[38;5;248m"
-#define GREEN "\e[0;32m"
+// WORLD ENTITY TILES
+#define PLAYER_TILE 64 // @ 
+#define SKELETON_TILE 37 // %
+#define DEATH_TILE 38 // &
+#define WOLF_TILE 60 // <
+
+// COLORS
+#define BLACK "\e[38;5;0m"
+#define WHITE "\e[38;5;7m"
+#define GREY "\e[38;5;243m"
+#define GREEN "\e[38;5;10m"
 #define BLUE "\e[0;34m"
-#define RED "\e[0;33m"
+#define RED "\e[38;5;1m"
+#define YELLOW "\e[38;5;11m"
+#define BROWN "\e[38;5;3m"
+#define MAGENTA "\e[38;5;5m"
+#define CYAN "\e[38;5;6m"
 
 char world[32][16]; 
 short WIDTH = 16; short HEIGHT = 8;
-short type=0, location=0, size=0;
+short type=0;
+short size=0;
 
 typedef struct Player{
-    int x;
-    int y;
+   short x;
+   short y;
+   short mode;
 } Player;
 
+Player * spawnPlayer(short ix,short iy)
+{
+    Player *newPlayer;
+    newPlayer = (Player*)malloc(sizeof(Player));
+
+    newPlayer->x = ix;
+    newPlayer->y = iy;
+    newPlayer->mode = 0;
+    return newPlayer;
+}
+
 int runGame(void);
-int generateWorld(int type, int size){
+int saveWorld(short x, short y);
+int titleScreen(void);
+
+int generateWorld(short type, short size)
+{
     WIDTH = 16 + (8*size);
     HEIGHT = 8 + (4*size);
     switch (type){
         case 0: // Forest
-            for (int r=0;r<HEIGHT;r++){
-                for (int c=0;c<WIDTH;c++){
-                    world[c][r] = GRASS_TILE;}}
+            for (short r=0;r<HEIGHT;r++){
+                for (short c=0;c<WIDTH;c++){
+                    if (rand() % 15 < 14) world[c][r] = GRASS_TILE;
+                    else world[c][r] = TREE_TILE;
+                    }
+                }
             break;
         case 1: // Shore
-            for (int r=0;r<HEIGHT;r++){
-                for (int c=0;c<WIDTH;c++){
-                    world[c][r] = WATER_TILE;}}
+            for (short r=0;r<HEIGHT;r++){
+                for (short c=0;c<WIDTH;c++){
+                    short offset = 3+(rand() % (HEIGHT/2+(HEIGHT/8)));
+                    if (r>offset) world[c][r] = WATER_TILE;
+                    else if (rand() % 12 <11) world[c][r] = GRASS_TILE;
+                    else world[c][r] = TREE_TILE;
+                }
+            }
             break;
         case 2: // Mountain
-            for (int r=0;r<HEIGHT;r++){
-                for (int c=0;c<WIDTH;c++){
-                    world[c][r] = STONE_TILE;}}
+            for (short r=0;r<HEIGHT;r++){
+                for (short c=0;c<WIDTH;c++){
+                    short offset = 2+(rand() % (WIDTH/2+HEIGHT/2));
+                    if (r<offset && c<offset) world[c][r] = STONE_TILE;
+                    else if (rand() % 12 <11) world[c][r] = GRASS_TILE;
+                    else world[c][r] = TREE_TILE;}}
             break;
         default:
             break;
@@ -60,22 +106,19 @@ int generateWorld(int type, int size){
     runGame();
     return 0;
 }
-Player * spawnPlayer(int ix, int iy){
-    Player *newPlayer;
-    newPlayer = (Player*)malloc(sizeof(Player));
 
-    newPlayer->x = ix;
-    newPlayer->y = iy;
-    return newPlayer;
+const char *getFileNameExt(const char *filename) {
+    const char *dot = strrchr(filename, '.');
+    if(!dot || dot == filename) return "";
+    return dot + 1;
 }
 
-void setCursor(int x, int y) // Move the terminal cursor to a position
+void setCursor(short x, short y) // Move the terminal cursor to a position
 {
     COORD c = {x, y};
     SetConsoleCursorPosition( GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
-
-void hideCursor() // Hide the terminal cursor
+void hideCursor(void) // Hide the terminal cursor
 {
    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
    CONSOLE_CURSOR_INFO info;
@@ -83,19 +126,26 @@ void hideCursor() // Hide the terminal cursor
    info.bVisible = FALSE;
    SetConsoleCursorInfo(consoleHandle, &info);
 }
-
-char getTile(int x, int y) { // Returns the tile character
-    return world[x][y];
+void showCursor(void){
+    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+   CONSOLE_CURSOR_INFO info;
+   info.dwSize = 100;
+   info.bVisible = TRUE;
+   SetConsoleCursorInfo(consoleHandle, &info);
 }
-void setText(int x, int y, char text) {
+
+void setText(short x, short y, char text) {
     setCursor(x,y);
     printf("%c",text);
 }
 
-void setTile(int x, int y, char tile) {
+char getTile(short x, short y) { // Returns the tile character
+    return world[x][y];
+}
+void setTile(short x, short y, char tile) {
     world[x][y] = tile;
     setCursor(x,y);
-    switch(world[x][y]){
+    switch(tile){
         case GRASS_TILE:
             printf(GREEN"%c",GRASS_TILE);
             break;
@@ -105,22 +155,51 @@ void setTile(int x, int y, char tile) {
         case STONE_TILE:
             printf(GREY"%c",STONE_TILE);
             break;
+        case TREE_TILE:
+            printf(BROWN"%c",TREE_TILE);
+            break;
+        case VOID_TILE:
+            printf(BLACK"%c",VOID_TILE);
+            break;
         default:
-            printf(WHITE"%c",world[x][y]);
+            printf(WHITE"%c",tile);
             break;
     }
 }
-void movePlayer(int x, int y) {
+void breakTile(short x, short y) {
     setCursor(x,y);
-    printf(WHITE"%c",PLAYER_TILE);}
-int refreshWorld(Player *player){
+    printf(RED"+");
+    switch (world[x][y])
+    {
+    case TREE_TILE:
+        world[x][y] = GRASS_TILE;
+        break;
+    case GRASS_TILE:
+        world[x][y] = STONE_TILE;
+        break;
+    case STONE_TILE:
+        world[x][y] = VOID_TILE;
+        break;
+    default:
+        break;
+    }
+    Sleep(100);
+    setTile(x,y,world[x][y]);
+}
+void movePlayer(short x, short y) 
+{
+    setCursor(x,y);
+    printf(WHITE"%c",PLAYER_TILE);
+}
+int refreshWorld(Player *player)
+{
     for (int r=0;r<HEIGHT;r++){
         for (int c=0;c<WIDTH;c++){
             setTile(c,r,world[c][r]);
         }
         printf("\n");}
-    return 0;}
-
+    return 0;
+}
 int runGame(void) {
     bool running = TRUE;
     char key;
@@ -129,9 +208,11 @@ int runGame(void) {
     refreshWorld(player);
     movePlayer(player->x,player->y);
     do{
-        key = getch();
         hideCursor();
-        setTile(player->x,player->y,world[player->x][player->y]);
+        key = getch();
+       short oldPlayerPos[2] = { player->x, player->y };
+        
+        if (player->mode==0) setTile(player->x,player->y,world[player->x][player->y]);
         switch (key){
             case KEY_RIGHT:
                 player->x = (player->x + 1) % WIDTH;
@@ -147,40 +228,172 @@ int runGame(void) {
                 if (player->y == 0) player->y = HEIGHT-1;
                 else player->y -= 1;
                 break;
+            case KEY_ENTER:
+                player->mode = 1;
+                setCursor(player->x,player->y);
+                printf(RED"%c",PLAYER_TILE);
+                break;
             case KEY_ESC:
-                system("cls");
-                exit(0);
+                saveWorld(player->x,player->y);
                 running = FALSE;
                 break;
             default:
-                continue;
+                break;
         }
-        movePlayer(player->x,player->y);
+        
+        if (getTile(player->x,player->y)==TREE_TILE || getTile(player->x,player->y)==BRICK_TILE || player->mode>0)
+        {
+            if (player->mode == 1) {
+                if (player->x == oldPlayerPos[0] && player->y == oldPlayerPos[1]) continue;
+                else {
+                    breakTile(player->x,player->y);
+                    player->mode = 0;
+                }
+            }
+            
+            player->x = oldPlayerPos[0];
+            player->y = oldPlayerPos[1];
+        }
+        if (player->mode == 0) movePlayer(player->x,player->y);
     } while (running==TRUE);
-}
-
-/* Save Data
-<type> <location> <size>
-<world data>
-*/
-int loadSave(void) {
-    FILE *save;
-    char saveName[20];
-
-    short type, location, size;
-    system("cls");
-    while (save == NULL){
-        printf("Enter Save File Name: ");
-        scanf("%s", saveName);
-        save = fopen(saveName,"r");}
     return 0;
 }
-
-int saveWorld(void) {
-    FILE *export;
-    export = fopen("save.txt","w");
-    fprintf(export, "%d %d %d\n",type,location,size);
-    fclose(export);
+FILE * getSaveFile(short index){
+    DIR* folder;
+    struct dirent *entry;
+    char saveName[20];
+    short saves = 0;
+    folder = opendir(".");
+    while (entry=readdir(folder)){
+        if (strcmp(getFileNameExt(entry->d_name),"txt")==0){
+            if (saves == index) return fopen(entry->d_name,"r");
+            saves++;
+        } else continue;
+    }
+    closedir(folder);
+    free(entry);
+    free(folder);
+}
+int loadSave(void) {
+    DIR* folder;
+    FILE *saveFile = NULL;
+    char saveName[20];
+    struct dirent *entry;
+    short saves = 0;
+    bool running = TRUE;
+    folder = opendir(".");
+    
+    system("cls");
+    printf(BLUE"Load World\n\n");
+    while (entry=readdir(folder)){
+        if (strcmp(getFileNameExt(entry->d_name),"txt")==0){
+        saves++;
+        printf("\e[38;5;%im %d: ",(rand() % 255)+1,saves);
+        printf("%s\n",strtok(entry->d_name,".txt"));
+        }
+        else continue;
+    }
+    closedir(folder);
+    free(folder);
+    free(entry);
+    if (saves==0) {
+        printf(GREY"No Save Data\nReturning to Menu...");
+        running = FALSE;
+        Sleep(1000);
+        titleScreen();
+    } else printf(RED" Delete World");
+    //scanf("%s", saveName);
+    //selectedFile = fopen(saveName,"r");
+    short selected = 0;
+    char key;
+    do{
+        for (short r=0;r<=saves;r++){
+            setText(0,r+2,(r==selected) ? 62 : 32); //empty space if not selected
+        }
+        key = getch();
+        switch (key){
+            case KEY_DOWN:
+                if (selected < saves) selected += 1;
+                break;
+            case KEY_UP:
+                if (selected > 0) selected -= 1;
+                break;
+            case KEY_ESC:
+                running = FALSE;
+                system("cls");
+                titleScreen();
+                break;
+            case KEY_ENTER:
+                setCursor(1,selected+2);
+                if (selected == saves) {
+                    FILE *deleteFile = NULL;
+                    char deleteFileName[30];
+                    printf(GREY" Enter Save File to Delete: "BROWN);
+                    scanf("%s",&deleteFileName);
+                    deleteFile = fopen(deleteFileName,"r");
+                    if ((deleteFile == NULL)==FALSE){
+                    fclose(deleteFile);
+                    remove(deleteFileName);
+                    system("cls");
+                    printf(RED"Deleted successfully\nRefreshing..."WHITE);
+                    Sleep(900);
+                    running = FALSE;
+                    loadSave();}
+                    else{
+                        system("cls");
+                        printf(MAGENTA"Unable to delete save file\nRefreshing..."WHITE);
+                        Sleep(900);
+                        running = FALSE;
+                        loadSave();}
+                } else {
+                    saveFile = getSaveFile(selected);
+                    short x, y, size;
+                    fscanf(saveFile,"%hd %hd %hd",&x,&y,&size);
+                    WIDTH = 16 + (8*size);
+                    HEIGHT = 8 + (4*size);
+                    fscanf(saveFile,"\n","");
+                    for (short r=0;r<HEIGHT;r++){
+                        for (short c=0;c<WIDTH;c++){
+                            fscanf(saveFile,"%c",&world[c][r]);}
+                        fscanf(saveFile,"\n","");}
+                    running = FALSE;
+                    system("cls");
+                    printf(GREEN"Loading World..."WHITE);
+                    Sleep(800);
+                    runGame();
+                    }
+                break;
+            }
+                
+        } while (running==TRUE);
+    closedir(folder);
+    return 0;
+}
+int saveWorld(short x,short y) {
+    system("cls");
+    FILE *saveFile = NULL;
+    char saveName[20] = ".";
+    showCursor();
+    while (saveFile == NULL){
+        printf(MAGENTA"Save World (Single-Word, No Extension)\n\n"
+        YELLOW"Save World As: "WHITE);
+        scanf("%s",&saveName);
+        saveFile = fopen(strcat(saveName,".txt"),"w");
+    }
+    if ((saveFile == NULL)==FALSE) {
+        fprintf(saveFile, "%d %d %d\n",x,y,((WIDTH-16)/8));
+        for (int r=0;r<HEIGHT;r++) {
+            for (int c=0;c<WIDTH;c++) {
+                fprintf(saveFile,"%c",world[c][r]);
+            }
+            fprintf(saveFile,"\n");
+        }
+        Sleep(250);
+        printf(GREEN"World Saved Successfully as '%s'"GREY"\nExiting...\n"WHITE,saveName);
+        Sleep(750);
+        fclose(saveFile);
+    }
+    exit(0);
     return 0;
 }
 
@@ -192,13 +405,16 @@ int createWorld(void) {
     bool running = TRUE;
     char key;
     system("cls");
-    printf("Create New World\n\n>Type: %s\n Size: %s\n Create World",worldTypes[type],worldSizes[size]);
+    printf(GREY"Create New World\n\n"
+           WHITE">Type: "GREEN"%s\n"
+           WHITE" Size: "YELLOW"%s\n"
+           CYAN" Create World",worldTypes[type],worldSizes[size]);
     hideCursor();
     do{
+        printf(CYAN);
         for (int r=0;r<=2;r++){
             setText(0,r+2,(r==selected) ? 62 : 32); //empty space if not selected
         }
-        setText(0,selected+2,62);
         key = getch();
         switch (key){
             case KEY_DOWN:
@@ -210,22 +426,23 @@ int createWorld(void) {
             case KEY_ESC:
                 running = FALSE;
                 system("cls");
-                exit(0);
+                titleScreen();
                 break;
             case KEY_ENTER:
                 setCursor(1,selected+2);
                 switch (selected) {
                     case 0:
                         type = (type + 1) % 3;
-                        printf("%s %s", settings[selected], worldTypes[type]);
+                        printf(WHITE"%s "GREEN"%s", settings[selected], worldTypes[type]);
                         break;
                     case 1:
                         size = (size + 1) % 3;
-                        printf("%s %s", settings[selected], worldSizes[size]);
+                        printf(WHITE"%s "YELLOW"%s", settings[selected], worldSizes[size]);
                         break;
                     case 2:
                         running = FALSE;
                         system("cls");
+                        Sleep(100);
                         generateWorld(type,size);
                         break;
                     default: break;
@@ -239,12 +456,16 @@ int createWorld(void) {
 int titleScreen(void) {
     system("cls");
     hideCursor();
-    printf("Pixelite\n\n New\n Load\n Exit");
+    printf(GREEN"Pixelite\n\n"
+           CYAN" New\n"
+           BLUE" Load\n"
+           MAGENTA" Exit"
+           RED);
     bool running = true;
-    int selected = 0;
+   short selected = 0;
     char key;
     do{
-        for (int r=0;r<=2;r++){
+        for (short r=0;r<=2;r++){
             setText(0,r+2,32);
         }
         setText(0,selected+2,62);
@@ -269,6 +490,8 @@ int titleScreen(void) {
                         createWorld();
                         break;
                     case 1:
+                        running = FALSE;
+                        system("cls");
                         loadSave();
                         break;
                     case 2:
@@ -283,6 +506,8 @@ int titleScreen(void) {
     } while(running == TRUE);
 }
 int main(void){
+    hideCursor();
+    Sleep(500);
     titleScreen();
     return 0;
 }
