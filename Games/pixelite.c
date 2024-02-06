@@ -484,22 +484,17 @@ int titleScreen(void) {
                 break;
             case KEY_ENTER:
                 switch (selected) {
+                    running = FALSE;
+                    system("cls");
                     case 0:
-                        running = FALSE;
-                        system("cls");
                         createWorld();
                         break;
                     case 1:
-                        running = FALSE;
-                        system("cls");
                         loadSave();
                         break;
                     case 2:
-                        running = FALSE;
-                        system("cls");
                         exit(0);
                         break;
-                    default: break;
                 } break;
             default: break;
         }
