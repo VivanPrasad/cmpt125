@@ -3,7 +3,11 @@
         {
             "name": "windows-gcc-x64",
             "includePath": [
-                "C:\\MinGW\\include"
+                "C:\\MinGW\\include",
+                "${workspaceFolder}/Games/",
+                "${workspaceFolder}/Games/**",
+                "C:/Users/vivan/Documents/Github/cmpt125/Games/**",
+                "${workspaceFolder}/"
             ],
             "defines": [
                 "_DEBUG",

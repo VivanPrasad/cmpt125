@@ -69,7 +69,9 @@
     "string.h": "c",
     "io.h": "c",
     "iosfwd": "c",
-    "conio.h": "c"
+    "conio.h": "c",
+    "pixelite.h": "c",
+    "stdbool.h": "c"
   },
   "C_Cpp.intelliSenseEngineFallback": "disabled"
 }

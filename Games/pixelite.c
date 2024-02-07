@@ -17,9 +17,8 @@
 // WORLD TILESET
 #define GRASS_TILE 46 // "
 #define STONE_TILE 45 // -
-#define JEWEL_TILE 
-#define WATER_TILE 126 // ~
-#define SEED_TILE 44 // ,
+#define WATER_TILE 126 // ~ // It's just water...
+#define SEED_TILE 44 // , // Grows into a tree after 10 seconds
 #define CAVE_TILE 
 #define TREE_TILE 84 // T
 #define BRICK_TILE 35 // #
@@ -28,7 +27,7 @@
 // WORLD ENTITY TILES
 #define PLAYER_TILE 64 // @ 
 #define SKELETON_TILE 37 // %
-#define DEATH_TILE 38 // &
+#define SNAKE_TILE 38 // &
 #define WOLF_TILE 60 // <
 
 // COLORS
@@ -47,6 +46,7 @@ char world[32][16];
 short WIDTH = 16; short HEIGHT = 8;
 short type=0;
 short size=0;
+char key;
 
 typedef struct Player{
    short x;
@@ -63,6 +63,14 @@ Player * spawnPlayer(short ix,short iy)
     newPlayer->y = iy;
     newPlayer->mode = 0;
     return newPlayer;
+    free(newPlayer);
+    newPlayer = NULL;
+}
+
+const int quit(void){
+    //system("cls");
+    printf(WHITE);
+    exit(0);
 }
 
 int runGame(void);
@@ -183,7 +191,7 @@ void breakTile(short x, short y) {
     default:
         break;
     }
-    Sleep(100);
+    Sleep(70);
     setTile(x,y,world[x][y]);
 }
 void movePlayer(short x, short y) 
@@ -202,8 +210,10 @@ int refreshWorld(Player *player)
 }
 int runGame(void) {
     bool running = TRUE;
-    char key;
     Player *player = spawnPlayer(4,4);
+    system("cls");
+    printf(GREEN"Loading World..."WHITE);
+    Sleep(500);
     system("cls");
     refreshWorld(player);
     movePlayer(player->x,player->y);
@@ -274,7 +284,8 @@ FILE * getSaveFile(short index){
     free(entry);
     free(folder);
 }
-int loadSave(void) {
+
+int loadWorld(void) {
     DIR* folder;
     FILE *saveFile = NULL;
     char saveName[20];
@@ -299,13 +310,12 @@ int loadSave(void) {
     if (saves==0) {
         printf(GREY"No Save Data\nReturning to Menu...");
         running = FALSE;
-        Sleep(1000);
+        Sleep(500);
         titleScreen();
-    } else printf(RED" Delete World");
+    } else printf(RED" Delete a World");
     //scanf("%s", saveName);
     //selectedFile = fopen(saveName,"r");
     short selected = 0;
-    char key;
     do{
         for (short r=0;r<=saves;r++){
             setText(0,r+2,(r==selected) ? 62 : 32); //empty space if not selected
@@ -328,23 +338,25 @@ int loadSave(void) {
                 if (selected == saves) {
                     FILE *deleteFile = NULL;
                     char deleteFileName[30];
-                    printf(GREY" Enter Save File to Delete: "BROWN);
+                    printf(GREY" Enter Save to Delete: "BROWN);
                     scanf("%s",&deleteFileName);
-                    deleteFile = fopen(deleteFileName,"r");
-                    if ((deleteFile == NULL)==FALSE){
-                    fclose(deleteFile);
-                    remove(deleteFileName);
-                    system("cls");
-                    printf(RED"Deleted successfully\nRefreshing..."WHITE);
-                    Sleep(900);
-                    running = FALSE;
-                    loadSave();}
+                    deleteFile = fopen(strcat(deleteFileName,".txt"),"r");
+                    if ((deleteFile == NULL)==FALSE)
+                    {
+                        fclose(deleteFile);
+                        remove(deleteFileName);
+                        system("cls");
+                        printf(RED"Deleted successfully\nRefreshing..."WHITE);
+                        Sleep(500);
+                        running = FALSE;
+                        loadWorld();
+                    }
                     else{
                         system("cls");
                         printf(MAGENTA"Unable to delete save file\nRefreshing..."WHITE);
-                        Sleep(900);
+                        Sleep(500);
                         running = FALSE;
-                        loadSave();}
+                        loadWorld();}
                 } else {
                     saveFile = getSaveFile(selected);
                     short x, y, size;
@@ -357,9 +369,6 @@ int loadSave(void) {
                             fscanf(saveFile,"%c",&world[c][r]);}
                         fscanf(saveFile,"\n","");}
                     running = FALSE;
-                    system("cls");
-                    printf(GREEN"Loading World..."WHITE);
-                    Sleep(800);
                     runGame();
                     }
                 break;
@@ -374,12 +383,11 @@ int saveWorld(short x,short y) {
     FILE *saveFile = NULL;
     char saveName[20] = ".";
     showCursor();
-    while (saveFile == NULL){
-        printf(MAGENTA"Save World (Single-Word, No Extension)\n\n"
-        YELLOW"Save World As: "WHITE);
-        scanf("%s",&saveName);
-        saveFile = fopen(strcat(saveName,".txt"),"w");
-    }
+    system("cls");
+    printf(MAGENTA"Enter a Single-Word with No Extension\n"
+    YELLOW"Save World As: "WHITE);
+    scanf("%s",&saveName);
+    saveFile = fopen(strcat(saveName,".txt"),"w");
     if ((saveFile == NULL)==FALSE) {
         fprintf(saveFile, "%d %d %d\n",x,y,((WIDTH-16)/8));
         for (int r=0;r<HEIGHT;r++) {
@@ -388,12 +396,13 @@ int saveWorld(short x,short y) {
             }
             fprintf(saveFile,"\n");
         }
-        Sleep(250);
-        printf(GREEN"World Saved Successfully as '%s'"GREY"\nExiting...\n"WHITE,saveName);
-        Sleep(750);
-        fclose(saveFile);
+        printf(GREEN"World Saved Successfully as '%s'"GREY"\nExiting...\n\n"WHITE,saveName);
+        Sleep(500);
+    } else {
+        printf(RED"World Not Saved"GREY"\nExiting...\n\n"WHITE);
     }
-    exit(0);
+    fclose(saveFile);
+    quit();
     return 0;
 }
 
@@ -402,8 +411,6 @@ int createWorld(void) {
     const char worldSizes[3][10] = {"Tiny  ","Normal","Grand "};
     const char settings[3][10] = {"Type:","Size:","Create"};
     short selected=0;
-    bool running = TRUE;
-    char key;
     system("cls");
     printf(GREY"Create New World\n\n"
            WHITE">Type: "GREEN"%s\n"
@@ -424,7 +431,6 @@ int createWorld(void) {
                 if (selected > 0) selected -= 1;
                 break;
             case KEY_ESC:
-                running = FALSE;
                 system("cls");
                 titleScreen();
                 break;
@@ -440,9 +446,7 @@ int createWorld(void) {
                         printf(WHITE"%s "YELLOW"%s", settings[selected], worldSizes[size]);
                         break;
                     case 2:
-                        running = FALSE;
                         system("cls");
-                        Sleep(100);
                         generateWorld(type,size);
                         break;
                     default: break;
@@ -451,7 +455,7 @@ int createWorld(void) {
             default:
                 break;
         }
-    } while(running == TRUE);
+    } while(TRUE == TRUE);
 }
 int titleScreen(void) {
     system("cls");
@@ -461,48 +465,40 @@ int titleScreen(void) {
            BLUE" Load\n"
            MAGENTA" Exit"
            RED);
-    bool running = true;
-   short selected = 0;
-    char key;
+    short *selected = (short*)calloc(1,sizeof(short));
+    bool running = TRUE;
     do{
         for (short r=0;r<=2;r++){
             setText(0,r+2,32);
         }
-        setText(0,selected+2,62);
+        setText(0,*selected+2,62);
         key = getch();
         switch (key){
             case KEY_DOWN:
-                if (selected < 2) selected += 1;
+                if (*selected < 2) *selected += 1;
                 break;
             case KEY_UP:
-                if (selected > 0) selected -= 1;
+                if (*selected > 0) *selected -= 1;
                 break;
-            case KEY_ESC:
-                running = FALSE;
-                system("cls");
-                exit(0);
+            case KEY_ESC: quit();
                 break;
             case KEY_ENTER:
-                switch (selected) {
-                    running = FALSE;
-                    system("cls");
-                    case 0:
-                        createWorld();
+                switch (*selected) {
+                    free(selected);
+                    case 0: createWorld();
                         break;
-                    case 1:
-                        loadSave();
+                    case 1: loadWorld();
                         break;
-                    case 2:
-                        exit(0);
-                        break;
-                } break;
+                    case 2: 
+                        quit();
+                        break;} 
+                break;
             default: break;
         }
     } while(running == TRUE);
 }
 int main(void){
     hideCursor();
-    Sleep(500);
     titleScreen();
     return 0;
 }
