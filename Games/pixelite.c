@@ -497,6 +497,7 @@ int titleScreen(void) {
         }
     } while(running == TRUE);
 }
+
 int main(void){
     hideCursor();
     titleScreen();
