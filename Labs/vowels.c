@@ -23,11 +23,19 @@ int main(void)
         unsigned int *char_counts = 0;
         char_counts = (unsigned int*)calloc(8,sizeof(unsigned int)); //Array of counts
 
-        while (!feof(inputFile) == EOF)
+        int is_other = 1;
+        while (!(feof(inputFile)))
         {
-            current_char = getc(inputFile);
             fscanf(inputFile,"%c",&current_char);
-            printf("%c",current_char);
+            is_other = 1;
+            for (int n=0;n<8;n++)
+            {
+                char_counts[n] += compare(chars[n], current_char);
+                is_other -= compare(chars[n], current_char);
+
+            }
+            other_count += is_other;
+
         }
         for (int i=0;i<6;i++)
         {
@@ -39,7 +47,7 @@ int main(void)
         free(char_counts); char_counts = NULL;
         fclose(inputFile);
         printf("Do you wish to count the characters in another file (y/n)? ");
-        scanf("%c",&response);
-        printf("%d",response);
+        scanf("\n%c",&response);
+        if (response == 121) main();
     return 0;
 }

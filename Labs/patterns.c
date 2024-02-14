@@ -26,7 +26,7 @@ int main(void)
     scanf("%d",&N);
     if (N > 9 || N < 2) {
         fprintf(stderr,"ERROR: %s\n","Value of N supplied is out of range");
-        exit(1);
+        return 1;
     }
 
     display_pattern(N);
