@@ -29,19 +29,19 @@ int new_answer(int array[ANSWER_DIGITS])
     }
     return 0;
 }
-int print_answer(int array[ANSWER_DIGITS])
+
+int print_guess(int array[ANSWER_DIGITS])
 {
     for (int i=0; i < ANSWER_DIGITS; i++)
     {
         printf("%-2d", array[i]);
     }
-    printf("\n");
 }
 
 int print_tutorial(void)
 {
     printf("For each turn enter 6 digits 0 <= digit <= 9\n");
-    printf("Spaces of tabs in your response will be ignored\n\n");
+    printf("Spaces of tabs in your response will be ignored\n");
 }
 
 int get_digit(char digit)
@@ -52,59 +52,111 @@ int get_digit(char digit)
     }
 }
 
-bool is_same_digit(int d1, int d2)
+bool is_answer(int guess[ANSWER_DIGITS],int answer[ANSWER_DIGITS])
 {
-    return ((bool)(d1==d2));
+    int correct = 0;
+    for (int g=0;g<ANSWER_DIGITS;g++)
+    {
+        for (int a=0;a<ANSWER_DIGITS;a++)
+        {
+            if ((a==g) && (answer[a]==guess[g])) correct += 1;
+        }
+    }
+    if (correct == ANSWER_DIGITS) return true;
+    else return false;
+            
 }
-
-int check_guess(void)
+int check_guess(int guess_number, int guess[ANSWER_DIGITS], int answer[ANSWER_DIGITS])
 {
-    
+    int correct = 0; //In the answer, in the correct space
+    int partial = 0; //In the answer, not in the correct space
+
+    int answerc[ANSWER_DIGITS], guessc[ANSWER_DIGITS];
+    for (int i=0;i<ANSWER_DIGITS;i++) { // Deep copy of answer and guess
+        answerc[i] = answer[i];
+        guessc[i] = guess[i]; }
+
+    for (int g=0;g<ANSWER_DIGITS;g++)
+    {
+        for (int a=0;a<ANSWER_DIGITS;a++)
+        {
+            if ((a==g) && (answerc[a]==guessc[g]))
+            {
+                correct += 1;
+                answerc[a] = -1;
+                guessc[g] = -2;
+            }
+            else if (guessc[g]==answerc[a])
+            {
+                partial += 1;
+                answerc[a] = -1;
+                guessc[g] = -2;
+            }
+        }
+    }
+    printf("Guess %d: ",guess_number+1);
+    print_guess(guess);
+    printf("- %d correct, %d partially correct.\n",correct,partial);
     return 0;
 }
+
 int new_game(void) // Play the game
 { 
     int *answer = NULL;
     answer = (int*)malloc(ANSWER_DIGITS*sizeof(int));
     new_answer(answer); // Generates the sranded answer
-    
-    print_tutorial(); // Prints initial tutorial
 
+    int guesses[50][ANSWER_DIGITS];
+    char current_char;
+    int digits_left;
+    int number_guesses = 0;
+    print_tutorial(); // Prints initial tutorial
+    fscanf(stdin,"%c",&current_char);
     while (1==1)
     {
-        printf("Enter your guess, %d Digits\n", ANSWER_DIGITS);
-        int current_guess[ANSWER_DIGITS];
-        char current_char;
-        fscanf(stdin,"%c",&current_char);
-        int digits_left = ANSWER_DIGITS;
+        printf("\nEnter your guess, %d digits\n", ANSWER_DIGITS);
+        digits_left = ANSWER_DIGITS;
         while (true==true)
         {
             while (true==true)
             {
                 fscanf(stdin,"%c",&current_char);
                 if (current_char==10) break;
-                if ((current_char < 48 || current_char > 57) && !(current_char==32) )
+                else if (current_char >= 48 && current_char <= 57 && digits_left > 0)
+                {
+                    guesses[number_guesses][ANSWER_DIGITS-digits_left] = get_digit(current_char);
+                    digits_left -= 1;
+                } else if (!(current_char==32) && digits_left > 0)
                 {
                     printf("ERROR: A character in your guess was not a digit or a white space\n\n");
-                    digits_left = -2;
+                    digits_left = -1;
                     break;
-                } else if (current_char >= 48 && current_char <= 57)
-                {
-                    current_guess[ANSWER_DIGITS-digits_left] = get_digit(current_char);
-                    digits_left -= 1;
                 }
             }
             if (digits_left < 1) break;
-            else if (!(digits_left==-2))
+            else if (!(digits_left==-1))
             {
                 printf("You need to enter %d more digits to complete your guess\n",digits_left);
             }
             else break;
         }
-        if (digits_left > -2)
+        if (digits_left > -1)
         {
-            printf("Guess: ");
-            print_answer(current_guess);
+            number_guesses += 1;
+            if (is_answer(guesses[number_guesses-1],answer)==true){
+                printf("YOU DID IT!!\n");
+                for (int x=0;x<number_guesses;x++)
+                {
+                    check_guess(x,guesses[x],answer);
+                }
+                break;
+            } else 
+            {
+                for (int x=0;x<number_guesses;x++)
+                {
+                    check_guess(x,guesses[x],answer);
+                }
+            }
         }
         else digits_left = ANSWER_DIGITS;
     }
