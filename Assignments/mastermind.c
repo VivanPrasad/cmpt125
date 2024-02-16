@@ -44,9 +44,9 @@ int print_tutorial(void)
     printf("Spaces of tabs in your response will be ignored\n");
 }
 
-int get_digit(char digit)
+int get_digit(char digit) // Returns the integer version of the character digit
 {
-    for (int n=0;n<=9;n++)
+    for (int n=MIN_DIGIT;n<=MAX_DIGIT;n++)
     {
         if (digit == (48+n)) return n;
     }
@@ -106,19 +106,21 @@ int new_game(void) // Play the game
     answer = (int*)malloc(ANSWER_DIGITS*sizeof(int));
     new_answer(answer); // Generates the sranded answer
 
-    int guesses[50][ANSWER_DIGITS];
+    int guesses[80][ANSWER_DIGITS];
     char current_char;
     int digits_left;
-    int number_guesses = 0;
+    int number_guesses = 0; // Total guesses
+
     print_tutorial(); // Prints initial tutorial
-    fscanf(stdin,"%c",&current_char);
-    while (1==1)
+    fscanf(stdin,"%c",&current_char); //Reads initial character for input
+
+    while (1) // Core Game Loop
     {
         printf("\nEnter your guess, %d digits\n", ANSWER_DIGITS);
         digits_left = ANSWER_DIGITS;
-        while (true==true)
+        while (1)
         {
-            while (true==true)
+            while (1)
             {
                 fscanf(stdin,"%c",&current_char);
                 if (current_char==10) break;
@@ -129,18 +131,17 @@ int new_game(void) // Play the game
                 } else if (!(current_char==32) && digits_left > 0)
                 {
                     printf("ERROR: A character in your guess was not a digit or a white space\n\n");
-                    digits_left = -1;
+                    digits_left = -1; // -1 is an error
                     break;
                 }
             }
             if (digits_left < 1) break;
-            else if (!(digits_left==-1))
+            else
             {
                 printf("You need to enter %d more digits to complete your guess\n",digits_left);
             }
-            else break;
         }
-        if (digits_left > -1)
+        if (digits_left == 0) //The guess will print ONLY if the 6 digits were
         {
             number_guesses += 1;
             if (is_answer(guesses[number_guesses-1],answer)==true){
