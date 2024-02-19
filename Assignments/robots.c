@@ -7,6 +7,8 @@
 #define GREEN "\e[38;5;10m"
 #define BLUE "\e[0;34m"
 
+#define RESET "\e[1;1H\e[2J"
+
 #define NUM_COLORS 4
 #define NUM_DIRECTIONS 4
 #define FILE_TEXT_LENGTH 100
@@ -31,8 +33,8 @@ int nextBoard(int **board, int numRows, int numCols, int numRobots, struct Robot
 
 void printSquare(int value);
 void printRobot(int color);
-void printBoard(int **board, int numRows, int numCols, int numRobots, struct Robot *robots);
-void fprintBoard(FILE *outputFile, int **board, int numRows, int numCols, int numRobots, struct Robot *robots);
+void printBoard(FILE *stream, int **board, int numRows, int numCols, int numRobots);
+void printBoardColored(FILE *stream, int **board, int numRows, int numCols, int numRobots);
 
 int main(void)
 {
@@ -65,6 +67,61 @@ int main(void)
         } else break;
     }
     
+    // NUMBER OF ROWS READING
+    if (feof(inputFile))
+    {
+        fprintf(stderr,"ERROR: The number of rows was not in the input file (reached eof)\n");
+        return 1;
+    }
+    fscanf(inputFile,"%d\n",&numRows);
+    if (numRows < 20 || numRows > 300)
+    {
+        fprintf(stderr,"ERROR: The number of rows was outside the specified range (50 to 300 inclusive)\n");
+        return 1;
+    }
+
+    // NUMBER OF COLUMNS READING
+    if (feof(inputFile))
+    {
+        fprintf(stderr,"ERROR: The number of columns was not in the input file (reached eof)\n");
+        return 1;
+    }
+    fscanf(inputFile,"%d\n",&numCols);
+    if (numCols < 20 || numCols > 300)
+    {
+        fprintf(stderr,"ERROR: The number of columns was outside the specified range (50 to 300 inclusive)\n");
+        return 1;
+    }
+
+    // NUMBER OF ROBOTS READING
+    if (feof(inputFile))
+    {
+        fprintf(stderr,"ERROR: The number of robots was not in the input file (reached eof)\n");
+    }
+    fscanf(inputFile,"%d\n",&numRobots);
+    if (numRobots < 1 || numRobots > 10)
+    {
+        fprintf(stderr,"ERROR: The number of robots was outside the specified range (1 to 10 inclusive)\n");
+        return 1;
+    }
+
+    // BOARD TYPE READING
+    if (feof(inputFile))
+    {
+        fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
+    }
+    fscanf(inputFile,"%d\n",&initTypeValue);
+
+    // SEED READING
+    if (feof(inputFile))
+    {
+        fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
+    }
+
+    fscanf(inputFile,"%u\n",&initSeed);
+    fscanf(inputFile,"%d\n",&numTurns);
+    fscanf(inputFile,"%d\n",&printInterval);
+
     // OUTPUT FILE NAME READING
     if (feof(inputFile)) 
     {
@@ -73,68 +130,7 @@ int main(void)
     }
     fscanf(inputFile,"%s\n",&outputName);
     outputFile = fopen(outputName,"w"); // Open and make the export file
-    
-    // NUMBER OF ROWS READING
-    if (feof(inputFile))
-    {
-        fprintf(stderr,"ERROR: The number of rows was not in the input file (reached eof)\n");
-        fprintf(outputFile,"ERROR: The number of rows was not in the input file (reached eof)\n");
-        return 1;
-    }
-    fscanf(inputFile,"%d\n",&numRows);
-    if (numRows < 20 || numRows > 300)
-    {
-        fprintf(stderr,"ERROR: The number of rows was outside the specified range (50 to 300 inclusive)\n");
-        fprintf(outputFile,"ERROR: The number of rows was outside the specified range (50 to 300 inclusive)\n");
-        return 1;
-    }
 
-    // NUMBER OF COLUMNS READING
-    if (feof(inputFile))
-    {
-        fprintf(stderr,"ERROR: The number of columns was not in the input file (reached eof)\n");
-        fprintf(outputFile,"ERROR: The number of columns was not in the input file (reached eof)\n");
-        return 1;
-    }
-    fscanf(inputFile,"%d\n",&numCols);
-    if (numCols < 20 || numCols > 300)
-    {
-        fprintf(stderr,"ERROR: The number of columns was outside the specified range (50 to 300 inclusive)\n");
-        fprintf(outputFile,"ERROR: The number of columns was outside the specified range (50 to 300 inclusive)\n");
-        return 1;
-    }
-
-    // NUMBER OF ROBOTS READING
-    if (feof(inputFile))
-    {
-        fprintf(stderr,"ERROR: The number of robots was not in the input file (reached eof)\n");
-        fprintf(outputFile,"ERROR: The number of robots was not in the input file (reached eof)\n");
-    }
-    fscanf(inputFile,"%d\n",&numRobots);
-    if (numRobots < 1 || numRobots > 10)
-    {
-        fprintf(stderr,"ERROR: The number of robots was outside the specified range (1 to 10 inclusive)\n");
-        fprintf(outputFile,"ERROR: The number of robots was outside the specified range (1 to 10 inclusive)\n");
-        return 1;
-    }
-
-    // BOARD TYPE READING
-    if (feof(inputFile))
-    {
-        fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
-        fprintf(outputFile,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
-    }
-    fscanf(inputFile,"%d\n",&initTypeValue);
-
-    // SEED READING
-    if (feof(inputFile))
-    {
-        fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
-        fprintf(outputFile,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
-    }
-    fscanf(inputFile,"%u\n",&initSeed);
-    fscanf(inputFile,"%d\n",&numTurns);
-    fscanf(inputFile,"%d\n",&printInterval);
     fclose(inputFile);
 
     /*------------GAME SETUP STUFF------------*/
@@ -144,14 +140,14 @@ int main(void)
     if (boardpp == NULL)
 	{
 		fprintf(stderr,"ERROR: array of pointers for could not be allocated\n");
-        fprintf(stderr,"ERROR: array of pointers for could not be allocated\n");
+        fprintf(outputFile,"ERROR: array of pointers for could not be allocated\n");
 		return 100;
 	}
 	boardpp[0] = (int*)malloc(numRows*numCols*sizeof(int));
 	if (boardpp[0] == NULL)
 	{
 		fprintf(stderr,"ERROR: Array storage could not be allocated\n");
-        fprintf(stderr,"ERROR: Array storage could not be allocated\n");
+        fprintf(outputFile,"ERROR: Array storage could not be allocated\n");
 		free(boardpp);
 		return 100;
 	}
@@ -166,7 +162,7 @@ int main(void)
     if (robots == NULL)
     {
         fprintf(stderr,"ERROR: Array storage could not be allocated\n");
-        fprintf(stderr,"ERROR: Array storage could not be allocated\n");
+        fprintf(outputFile,"ERROR: Array storage could not be allocated\n");
         free(robots); robots = NULL;
 		return 100;
     }
@@ -176,10 +172,8 @@ int main(void)
     {
         if (t==0 || t==(numTurns) || (t%printInterval==0)) 
         {
-            printf("Turn %d\n",t);
-            fprintf(outputFile,"Turn %d\n",t);
-            printBoard(boardpp,numRows,numCols,numRobots, robots);
-            fprintBoard(outputFile,boardpp,numRows,numCols,numRobots, robots);
+            printBoardColored(stdout,boardpp,numRows,numCols,numRobots);
+            printBoard(outputFile,boardpp,numRows,numCols,numRobots);
         }
         nextBoard(boardpp,numRows,numCols,numRobots,robots);
     }
@@ -287,63 +281,40 @@ int nextBoard(int **board, int numRows, int numCols, int numRobots, struct Robot
     return 0;
 }
 /*----------OUTPUT FUNCTIONS----------*/
-void printSquare(int value)
-{
-    switch (value)
-    {
-        case 1: printf(WHITE"%2d",value); break;
-        case 2: printf(RED"%2d",value); break;
-        case 3: printf(GREEN"%2d",value); break;
-        case 4: printf(BLUE"%2d",value); break;
-    }
-}
-
-void printRobot(int color)
-{
-    switch (color)
-    {
-        case 1: printf(WHITE"%2c",ROBOT); break;
-        case 2: printf(RED"%2c",ROBOT); break;
-        case 3: printf(GREEN"%2c",ROBOT); break;
-        case 4: printf(BLUE"%2c",ROBOT); break;
-    }
-}
 // Prints board state to stdout
-void printBoard(int **board, int numRows, int numCols, int numRobots, struct Robot *robots)
+void printBoardColored(FILE* stream, int **board, int numRows, int numCols, int numRobots)
 {
     for (int r=0;r<numRows;r++)
     {
         for (int c=0;c<numCols;c++)
         {
-            int robot = -1;
-            for (int i=0;i<numRobots;i++)
+            switch (board[r][c])
             {
-                if ((robots[i].x)==c && (robots[i].y)==r) robot = i;
+                case 1: fprintf(stream,WHITE"%d"RESET,board[r][c]); 
+                    break;
+                case 2: fprintf(stream,RED"%d"RESET,board[r][c]); 
+                    break;
+                case 3: fprintf(stream,GREEN"%d"RESET,board[r][c]); 
+                    break;
+                case 4: fprintf(stream,BLUE"%d"RESET,board[r][c]); 
+                    break;
             }
-            if (robot>-1) printRobot(robots[robot].paintColor);
-            else printSquare(board[r][c]);
         }
         printf("\n");
     }
-    printf(WHITE"\n\n");
+    printf("\n\n");
 }
 
 // Prints board state to outputFile
-void fprintBoard(FILE *outputFile, int **board, int numRows, int numCols, int numRobots, struct Robot *robots)
+void printBoard(FILE *stream, int **board, int numRows, int numCols, int numRobots)
 {
     for (int r=0;r<numRows;r++)
     {
         for (int c=0;c<numCols;c++)
         {
-            int robot = -1;
-            for (int i=0;i<numRobots;i++)
-            {
-                if ((robots[i].x)==c && (robots[i].y)==r) robot = i;
-            }
-            if (robot>-1) fprintf(outputFile,"%2c",ROBOT);
-            else fprintf(outputFile,"%2d",board[r][c]);
+            fprintf(stream,"%d",board[r][c]);
         }
-        fprintf(outputFile,"\n");
+        fprintf(stream,"\n");
     }
-    fprintf(outputFile,"\n\n");
+    fprintf(stream,"\n\n");
 }
