@@ -7,11 +7,10 @@
 #define GREEN "\e[38;5;10m"
 #define BLUE "\e[0;34m"
 
-#define NUM_COLORS 4
+#define NUM_COLORS 4 // Number of board colors
 #define NUM_DIRECTIONS 4
 #define FILE_TEXT_LENGTH 100
 
-#define ROBOT 64
 enum initTypeList { Random=1, Checker=2, AllWhite=3};
 
 struct Robot {
@@ -107,13 +106,15 @@ int main(void)
     if (feof(inputFile))
     {
         fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
+        return 1;
     }
     fscanf(inputFile,"%d\n",&initTypeValue);
 
     // SEED READING
     if (feof(inputFile))
     {
-        fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
+        fprintf(stderr,"ERROR: The initSeed was not in the input file (reached eof)\n");
+        return 1;
     }
 
     fscanf(inputFile,"%u\n",&initSeed);
@@ -137,8 +138,8 @@ int main(void)
     boardpp = (int**)malloc(numRows*sizeof(int*));
     if (boardpp == NULL)
 	{
-		fprintf(stderr,"ERROR: array of pointers for could not be allocated\n");
-        fprintf(outputFile,"ERROR: array of pointers for could not be allocated\n");
+		fprintf(stderr,"ERROR: array of pointers for 2-D array could not be allocated\n");
+        fprintf(outputFile,"ERROR: array of pointers for 2-D array could not be allocated\n");
 		return 100;
 	}
 	boardpp[0] = (int*)malloc(numRows*numCols*sizeof(int));
@@ -260,17 +261,21 @@ int nextBoard(int **board, int numRows, int numCols, int numRobots, struct Robot
         board[robots[i].y][robots[i].x] = robots[i].paintColor;
         switch (robots[i].direction)
         {
-            case 1: // NORTH
+            case 1: // Robot moves NORTH
                 if (robots[i].y > 0) robots[i].y -= 1;
+                else robots[i].y = numRows-1; // Loops around board
                 break;
-            case 2: // SOUTH
+            case 2: // Robot moves SOUTH
                 if (robots[i].y < (numRows-1)) robots[i].y += 1;
+                else robots[i].y = 0; // Loops around board
                 break;
-            case 3: // EAST
+            case 3: // Robot moves EAST
                 if (robots[i].x < (numCols-1)) robots[i].x += 1;
+                else robots[i].x = 0; // Loops around board 
                 break;
             case 4: // WEST
                 if (robots[i].x > 0) robots[i].x -= 1;
+                else robots[i].x = numCols-1; // Loops around board
                 break;
         }
         current_tile = board[robots[i].y][robots[i].x];
@@ -279,7 +284,7 @@ int nextBoard(int **board, int numRows, int numCols, int numRobots, struct Robot
     return 0;
 }
 /*----------OUTPUT FUNCTIONS----------*/
-// Prints board state to stdout
+// Prints board state to stdout (colored)
 void printBoardColored(FILE* stream, int **board, int numRows, int numCols, int numRobots)
 {
     for (int r=0;r<numRows;r++)
