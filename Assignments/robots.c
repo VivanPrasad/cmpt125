@@ -7,8 +7,6 @@
 #define GREEN "\e[38;5;10m"
 #define BLUE "\e[0;34m"
 
-#define RESET "\e[1;1H\e[2J"
-
 #define NUM_COLORS 4
 #define NUM_DIRECTIONS 4
 #define FILE_TEXT_LENGTH 100
@@ -290,19 +288,19 @@ void printBoardColored(FILE* stream, int **board, int numRows, int numCols, int 
         {
             switch (board[r][c])
             {
-                case 1: fprintf(stream,WHITE"%d"RESET,board[r][c]); 
+                case 1: fprintf(stream,WHITE"%d",board[r][c]); 
                     break;
-                case 2: fprintf(stream,RED"%d"RESET,board[r][c]); 
+                case 2: fprintf(stream,RED"%d",board[r][c]); 
                     break;
-                case 3: fprintf(stream,GREEN"%d"RESET,board[r][c]); 
+                case 3: fprintf(stream,GREEN"%d",board[r][c]); 
                     break;
-                case 4: fprintf(stream,BLUE"%d"RESET,board[r][c]); 
+                case 4: fprintf(stream,BLUE"%d",board[r][c]); 
                     break;
             }
         }
         printf("\n");
     }
-    printf("\n\n");
+    printf(WHITE"\n\n");
 }
 
 // Prints board state to outputFile
