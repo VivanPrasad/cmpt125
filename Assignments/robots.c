@@ -28,8 +28,6 @@ int InitRobots(struct Robot *robots, int numRows, int numCols, int numRobots,uns
 
 int nextBoard(int **board, int numRows, int numCols, int numRobots, struct Robot *robots);
 
-void printSquare(int value);
-void printRobot(int color);
 void printBoard(FILE *stream, int **board, int numRows, int numCols, int numRobots);
 void printBoardColored(FILE *stream, int **board, int numRows, int numCols, int numRobots);
 
@@ -265,13 +263,13 @@ int nextBoard(int **board, int numRows, int numCols, int numRobots, struct Robot
                 if (robots[i].y > 0) robots[i].y -= 1;
                 else robots[i].y = numRows-1; // Loops around board
                 break;
-            case 2: // Robot moves SOUTH
-                if (robots[i].y < (numRows-1)) robots[i].y += 1;
-                else robots[i].y = 0; // Loops around board
-                break;
-            case 3: // Robot moves EAST
+            case 2: // Robot moves EAST
                 if (robots[i].x < (numCols-1)) robots[i].x += 1;
                 else robots[i].x = 0; // Loops around board 
+                break;
+            case 3: // Robot moves SOUTH
+                if (robots[i].y < (numRows-1)) robots[i].y += 1;
+                else robots[i].y = 0; // Loops around board
                 break;
             case 4: // WEST
                 if (robots[i].x > 0) robots[i].x -= 1;

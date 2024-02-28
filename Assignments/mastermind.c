@@ -19,7 +19,17 @@ int get_seed(void)
     
     // Ask user for seed (assuming case is always correct)
     printf("Enter the integer value of the seed for the game: ");
-    scanf("%u",seed); // Read the input and sets the seed variable
+    
+    fflush(stdin); // Clears input buffer
+    
+    // Read the input and sets the seed variable
+    if (scanf("%u",seed) == 0) // If unsuccessful (scanf return 0):
+    {
+        // Recursive error calling
+        printf("Try again you made an error\n");
+        get_seed(); 
+    }
+
     srand(*seed); // Seed the pseudorandom number generator using seed
     
     free(seed); seed = NULL; // Free the dynamic seed variable
@@ -137,12 +147,12 @@ int new_game(void) // Play the game
     int number_guesses = 0; // Total guesses
 
     print_tutorial(); // Prints initial instructions
-    fscanf(stdin,"%c",&current_char); //Reads initial character for input
+    fflush(stdin); // Clears input buffer
 
     while (number_guesses < MAX_GUESSES) // Core Game Loop
     {
         printf("\nEnter your guess, %d digits\n", ANSWER_DIGITS);
-        digits_left = ANSWER_DIGITS;
+        digits_left = ANSWER_DIGITS; // Resets digits left for new guess
         while (1==1)
         {
             while (1==1) // Reading response loop
@@ -162,9 +172,8 @@ int new_game(void) // Play the game
                 {
                     /* If the character detected wasn't a space 
                     OR a valid digit, output a soft-error*/
-                    printf("ERROR: A character in your guess was not a digit or a white space\n\n");
+                    printf("ERROR: A character in your guess was not a digit or a white space\n");
                     digits_left = -1; // -1 is an error
-                    break;
                 }
             }
             
@@ -174,7 +183,7 @@ int new_game(void) // Play the game
         }
         if (digits_left == 0) //The guess will print ONLY if 6 digits were inputted
         {
-            number_guesses += 1;
+            number_guesses += 1; // Increments number of guesses (successful guess)
 
             // Checks if the guess is the same as the answer
             if (is_answer(guesses[number_guesses-1],answer)==true)
