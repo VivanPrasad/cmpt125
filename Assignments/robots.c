@@ -62,64 +62,126 @@ int main(void)
         } else break;
     }
     
-    // NUMBER OF ROWS READING
-    if (feof(inputFile))
+                                    /* NUMBER OF ROWS READING */
+    if (feof(inputFile)) // Check if end of file
     {
         fprintf(stderr,"ERROR: The number of rows was not in the input file (reached eof)\n");
         return 1;
     }
-    fscanf(inputFile,"%d\n",&numRows);
-    if (numRows < 20 || numRows > 300)
+    if (fscanf(inputFile,"%d\n",&numRows)==0) // Check reading
+    {
+        fprintf(stderr,"ERROR: The number of rows could not be read due to corrupt data in the file\n");
+    }
+    if (numRows < 20 || numRows > 300) // Check range
     {
         fprintf(stderr,"ERROR: The number of rows was outside the specified range (50 to 300 inclusive)\n");
         return 1;
     }
 
-    // NUMBER OF COLUMNS READING
-    if (feof(inputFile))
+                                    /* NUMBER OF COLUMNS READING */
+    if (feof(inputFile)) // Check if end of file
     {
         fprintf(stderr,"ERROR: The number of columns was not in the input file (reached eof)\n");
         return 1;
     }
-    fscanf(inputFile,"%d\n",&numCols);
-    if (numCols < 20 || numCols > 300)
+    
+    if (fscanf(inputFile,"%d\n",&numCols)==0) // Check reading
+    {
+        fprintf(stderr,"ERROR: The number of columns could not be read due to corrupt data in the file\n");
+        return 1;
+    }
+    if (numCols < 20 || numCols > 300) // Check range
     {
         fprintf(stderr,"ERROR: The number of columns was outside the specified range (50 to 300 inclusive)\n");
         return 1;
     }
 
-    // NUMBER OF ROBOTS READING
-    if (feof(inputFile))
+                                    /* NUMBER OF ROBOTS READING */
+    if (feof(inputFile)) // Check if end of file
     {
         fprintf(stderr,"ERROR: The number of robots was not in the input file (reached eof)\n");
+        return 1;
     }
-    fscanf(inputFile,"%d\n",&numRobots);
-    if (numRobots < 1 || numRobots > 10)
+    if (fscanf(inputFile,"%d\n",&numRobots)==0) // Check reading
+    {
+        fprintf(stderr,"ERROR: The number of robots could not be read due to corrupt data in the file\n");
+        return 1;
+    }
+    if (numRobots < 1 || numRobots > 10) // Check range
     {
         fprintf(stderr,"ERROR: The number of robots was outside the specified range (1 to 10 inclusive)\n");
         return 1;
     }
 
-    // BOARD TYPE READING
-    if (feof(inputFile))
+                                        /* BOARD TYPE READING */
+    if (feof(inputFile)) // Check if end of file
     {
         fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
         return 1;
     }
-    fscanf(inputFile,"%d\n",initTypeValue);
+    if (fscanf(inputFile,"%d\n",initTypeValue)==0) // Check reading
+    {
+        fprintf(stderr,"ERROR: The initTypeValue could not be read due to corrupt data in the file\n");
+        return 1;
+    }
+    if (initTypeValue < 1 || initTypeValue > 3) // Check range
+    {
+        fprintf(stderr,"ERROR: The initTypeValue was outside the specified range (1 to 3 inclusive)\n");
+        return 1;
+    }
 
-    // SEED READING
-    if (feof(inputFile))
+                                        /* SEED READING */
+    if (feof(inputFile)) // Check if end of file
     {
         fprintf(stderr,"ERROR: The initSeed was not in the input file (reached eof)\n");
         return 1;
     }
+    if (fscanf(inputFile,"%u\n",&initSeed)==0) // Check reading
+    {
+        fprintf(stderr,"ERROR: The initSeed could not be read due to corrupt data in the file\n");
+        return 1;
+    }
+    if (initSeed < 10 || initSeed > 32767) // Check range
+    {
+        fprintf(stderr,"ERROR: The initSeed was outside the specified range (10 to 32767 inclusive)\n");
+        return 1;
+    }
 
-    fscanf(inputFile,"%u\n",&initSeed);
-    fscanf(inputFile,"%d\n",&numTurns);
-    fscanf(inputFile,"%d\n",&printInterval);
+                                    /* NUMBER OF TURNS READING */
+    if (feof(inputFile)) // Check if end of file
+    {
+        fprintf(stderr,"ERROR: The number of turns was not in the input file (reached eof)\n");
+        return 1;
+    }
+    if (fscanf(inputFile,"%d\n",&numTurns)==0) // Check reading
+    {
+        fprintf(stderr,"ERROR: The number of turns could not be read due to corrupt data in the file\n");
+        return 1;
+    }
+    if (numTurns < 10 || numTurns > 5000) // Check range
+    {
+        fprintf(stderr,"ERROR: The number of turns was outside the specified range (10 to 5000 inclusive)\n");
+        return 1;
+    }
 
-    // OUTPUT FILE NAME READING
+                                    /* PRINT INTERVAL READING */
+    if (feof(inputFile)) // Check if end of file
+    {
+        fprintf(stderr,"ERROR: The printInterval was not in the input file (reached eof)\n");
+        return 1;
+    }
+    if (fscanf(inputFile,"%d\n",&printInterval)==0) // Check reading
+    {
+        fprintf(stderr,"ERROR: The printInterval could not be read due to corrupt data in the file\n");
+        return 1;
+    }
+    if (printInterval<1||printInterval>5000) // Check range
+    {
+        fprintf(stderr,"ERROR: The printInterval was outside the specified range (1 to 5000 inclusive)\n");
+        return 1;
+    }
+
+                                /* OUTPUT FILE NAME READING */
     if (feof(inputFile)) 
     {
         fprintf(stderr,"ERROR: Output file name was not in the input file (reached eof)\n");
@@ -194,8 +256,6 @@ int InitRobots(struct Robot *robots, int numRows, int numCols, int numRobots,uns
         robots[i].y = rand() % numRows;
         robots[i].direction = rand() % NUM_DIRECTIONS + 1;
         robots[i].paintColor = rand() % NUM_COLORS + 1;
-        //printf("Robot %d - Pos: (%d, %d) - Dir: %d - Col: %d\n",
-        //i+1,robots[i].x,robots[i].y,robots[i].direction,robots[i].paintColor);
     }
     return 0;
 }
