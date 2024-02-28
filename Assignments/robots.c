@@ -229,9 +229,9 @@ int main(void)
 
     nextBoard(boardpp,numRows,numCols,numRobots,robots);
     
-    for (int t=0;t<=numTurns;t++)
+    for (int t=1;t<=numTurns;t++)
     {
-        if (t==0 || t==(numTurns) || (t%printInterval==0)) 
+        if (t==1 || t==(numTurns) || (t%printInterval==0)) 
         {
             printBoardColored(stdout,boardpp,numRows,numCols,numRobots);
             printBoard(outputFile,boardpp,numRows,numCols,numRobots);
