@@ -119,7 +119,7 @@ int main(void)
         fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
         return 1;
     }
-    if (fscanf(inputFile,"%d\n",initTypeValue)==0) // Check reading
+    if (fscanf(inputFile,"%u\n",&initTypeValue)==0) // Check reading
     {
         fprintf(stderr,"ERROR: The initTypeValue could not be read due to corrupt data in the file\n");
         return 1;
