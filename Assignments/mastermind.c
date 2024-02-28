@@ -12,21 +12,27 @@
 #define NEWLINE_CHAR 10 // '\n' newline character value
 #define SPACE_CHAR 32 // ' ' space character value
 
+
+void clear_stdin(void)
+{
+    int c;
+    do {
+        c = getchar();
+    } while (c!='\n');
+}
 // Gets the initial seed and generates the pesudorandom number set
 int get_seed(void)
 {
     unsigned int *seed = (unsigned int*)malloc(sizeof(unsigned int));
-    
     // Ask user for seed (assuming case is always correct)
     printf("Enter the integer value of the seed for the game: ");
-    
-    fflush(stdin); // Clears input buffer
     
     // Read the input and sets the seed variable
     if (scanf("%u",seed) == 0) // If unsuccessful (scanf return 0):
     {
         // Recursive error calling
         printf("Try again you made an error\n");
+        clear_stdin(); // Clears input buffer
         get_seed(); 
     }
 
@@ -147,7 +153,7 @@ int new_game(void) // Play the game
     int number_guesses = 0; // Total guesses
 
     print_tutorial(); // Prints initial instructions
-    fflush(stdin); // Clears input buffer
+    clear_stdin();  // Clears input buffer
 
     while (number_guesses < MAX_GUESSES) // Core Game Loop
     {

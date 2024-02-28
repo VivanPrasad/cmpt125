@@ -106,7 +106,7 @@ int main(void)
         fprintf(stderr,"ERROR: The initTypeValue was not in the input file (reached eof)\n");
         return 1;
     }
-    fscanf(inputFile,"%d\n",&initTypeValue);
+    fscanf(inputFile,"%d\n",initTypeValue);
 
     // SEED READING
     if (feof(inputFile))
@@ -125,7 +125,7 @@ int main(void)
         fprintf(stderr,"ERROR: Output file name was not in the input file (reached eof)\n");
         return 1;
     }
-    fscanf(inputFile,"%s\n",&outputName);
+    fscanf(inputFile,"%s\n",outputName);
     outputFile = fopen(outputName,"w"); // Open and make the export file
 
     fclose(inputFile);
@@ -165,6 +165,8 @@ int main(void)
     }
     InitRobots(robots,numRows,numCols,numRobots,initSeed);
 
+    nextBoard(boardpp,numRows,numCols,numRobots,robots);
+    
     for (int t=0;t<=numTurns;t++)
     {
         if (t==0 || t==(numTurns) || (t%printInterval==0)) 
