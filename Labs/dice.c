@@ -156,6 +156,7 @@ acceptable range\n10 <= number of dice <= 10000\n\n");
     }
 }
 
+// Rolls the dice 
 int roll_dice(int num_dice,int num_sides)
 {
     int sum = 0;
@@ -165,6 +166,7 @@ int roll_dice(int num_dice,int num_sides)
     }
     return sum;
 }
+
 /* MAIN DICE PROGRAM */
 int main(void)
 {
