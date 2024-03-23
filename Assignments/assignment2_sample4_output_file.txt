@@ -1,0 +1,1078 @@
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 4.984000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 10.558000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 16.475000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 22.082000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 26.324000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 31.100000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 36.785000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 38.900000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 44.403000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 46.436000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 49.635000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 54.707000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 56.586000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 58.487000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 60.600000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 2.526000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 66.315000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 68.959000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 74.726000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 76.139000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 81.385000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 83.087000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 86.920000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 92.629000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 93.788000 grams
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 4.610000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 96.479000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 7.223000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 98.327000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 102.227000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 12.295000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 106.537000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 14.749000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 16.652000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 111.399000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 117.215000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 122.456000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 127.169000 grams
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 21.640000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 131.981000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 136.825000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 142.351000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 146.221000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 148.076000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 152.800000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 158.089000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 162.544000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 165.043000 grams
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 24.035000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 25.969000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 170.520000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 29.457000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 173.587000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 178.649000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 183.673000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 188.741000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 191.631000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 194.398000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 196.915000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+This coin does not fit in the other coin container
+The other coin container has been replaced
+The coin in the other coin container now weigh 5.639000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 7.713000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 11.639000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 15.803000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 18.378000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 34.337000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 20.565000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 21.646000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 24.218000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 25.330000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 27.919000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 29.439000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 34.957000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 40.715000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 45.204000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 50.474000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 35.553000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 52.281000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 54.560000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 58.076000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 61.845000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 36.586000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 65.757000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 67.018000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 71.103000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 72.560000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 75.132000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 79.160000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 82.890000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 87.083000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 92.884000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 97.695000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 100.280000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 102.551000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 105.587000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 37.618000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 39.323000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 110.543000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 114.408000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 120.054000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 124.370000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 125.978000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 40.741000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 131.224000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 136.942000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 141.353000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 146.287000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 150.712000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 155.129000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 159.068000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 160.743000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 163.852000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 168.210000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 172.303000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 177.004000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 180.161000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 184.563000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 188.312000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 191.556000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 193.941000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 197.975000 grams
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 42.459000 grams
+The Coin Sorter has sent this coin to the other coin container
+This coin does not fit in the other coin container
+The other coin container has been replaced
+The coin in the other coin container now weigh 2.797000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 6.436000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 9.907000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 14.332000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 19.329000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 21.285000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 26.219000 grams
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 29.360000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 32.528000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 33.618000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 37.333000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 3 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 4 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+The Paise wrapper is now full
+The Paise wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 42.674000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 2 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Rupee's wrapper
+The Rupee wrapper is now full
+The Rupee wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 3 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 1 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 2 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 3 coins in the Paise's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 4 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 5 coins in the Anna's wrapper
+The Coin Sorter has sent this coin to the bent coin container
+The coins in the bent coin container now weigh 47.531000 grams
+The Coin Sorter has sent one coin to the Anna's wrapper
+The Anna wrapper is now full
+The Anna wrapper has now been replaced
+The Coin Sorter has sent one coin to the Anna's wrapper
+There are now 1 coins in the Anna's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 4 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 43.900000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 48.698000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 1 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 5 coins in the Paise's wrapper
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 51.594000 grams
+The Coin Sorter has sent this coin to the other coin container
+The coins in the other coin container now weigh 52.993000 grams
+The Coin Sorter has sent one coin to the Rupee's wrapper
+There are now 2 coins in the Rupee's wrapper
+The Coin Sorter has sent one coin to the Paise's wrapper
+There are now 6 coins in the Paise's wrapper
+
+
+
+The Coin Sorter made 23 rolls of Rupee.
+There are 2 Rupee in the partially full roll.
+The Coin Sorter made 21 rolls of Anna.
+There are 1 Anna in the partially full roll.
+The Coin Sorter made 16 rolls of Paise.
+There are 6 Paise in the partially full roll.
+The Coin Sorter processed 120 other coins.
+The other coins filled 2 containers
+There were 16 other coins in the partially full container
+The total weight of the other coins was 447.883000 grams
+The Coin Sorter processed 47.531000 g of bent coins

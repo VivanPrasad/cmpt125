@@ -71,7 +71,10 @@
     "iosfwd": "c",
     "conio.h": "c",
     "pixelite.h": "c",
-    "stdbool.h": "c"
+    "stdbool.h": "c",
+    "typeinfo": "c",
+    "cmath": "c"
   },
-  "C_Cpp.intelliSenseEngineFallback": "disabled"
+  "C_Cpp.intelliSenseEngineFallback": "disabled",
+  "editor.rulers": [79,120]
 }
