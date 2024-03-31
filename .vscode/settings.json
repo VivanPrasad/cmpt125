@@ -73,8 +73,10 @@
     "pixelite.h": "c",
     "stdbool.h": "c",
     "typeinfo": "c",
-    "cmath": "c"
+    "cmath": "c",
+    "*.tcc": "c",
+    "cstdlib": "c"
   },
   "C_Cpp.intelliSenseEngineFallback": "disabled",
-  "editor.rulers": [79,120]
+  "editor.rulers": [59,79]
 }
