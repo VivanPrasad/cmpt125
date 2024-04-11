@@ -20,7 +20,7 @@ FILE* getInputFile(void)
     for (int i=1;i<=NUM_TRIES;i++)
     {
         printf("Enter the name of the input file: ");
-        scanf("%s",&inputFileName);
+        scanf("%s",(char*)&inputFileName);
         inputFile = fopen(inputFileName,"r");
         if (inputFile != NULL) break;
         
@@ -65,11 +65,11 @@ failures reading the number of measurements\n");
 void printRunningMean(int curMeas, double *myRunningMean)
 {
     printf("The running means are\n");
-    for (int i=1;i<=(curMeas-2);i++)
-    {
+    for (int i=1;i<=(curMeas-2);i++) {
         printf("%10.2lf",myRunningMean[i-1]);
         if ((i%5)==0) printf("\n");
     }
+    printf("\n");
 }
 
 int main(void)
@@ -79,7 +79,6 @@ int main(void)
     double* myMeasurements = NULL;
     double* myRunningMean = NULL;
     int curMeas = 0; //Number of actual measurements read
-
     if (inputFile == NULL) return EXIT_FAILURE;
     if (getNumMeas(&numMeas) == EXIT_FAILURE) return EXIT_FAILURE;
 
@@ -89,16 +88,13 @@ int main(void)
         fprintf(stderr,"ERROR: cannot allocate memory\n");
         return EXIT_FAILURE;
     }
-    
     myRunningMean = (double*)calloc(numMeas,sizeof(double));
     if (myRunningMean == NULL)
     {
         fprintf(stderr,"ERROR: cannot allocate memory\n");
         return EXIT_FAILURE;
     }
-    
-    fscanf(inputFile,"\n",""); //flush
-    
+    fscanf(inputFile,"\n");
     for (int i=0;i<numMeas;i++)
     {
         if (feof(inputFile))
@@ -107,13 +103,13 @@ int main(void)
             {
                 fprintf(stderr,"ERROR: input \
 file is empty\n");
-                return EXIT_FAILURE;
+                exit(EXIT_FAILURE);
             }
-            else if (i<2)
+            else if (i<3)
             {
                 fprintf(stderr,"ERROR: insufficient data \
 to calculate a running average\n");
-                return EXIT_FAILURE;
+                exit(EXIT_FAILURE);
             }
             else
             {
@@ -123,13 +119,17 @@ measurements in the file\n");
             }
         }
         fscanf(inputFile,"%lf",&myMeasurements[i]);
-        fscanf(inputFile,"\n",""); //flush
+        fscanf(inputFile,"\n");
         curMeas += 1;
         if (i>=2) RunningMean(myMeasurements,
             myRunningMean,i);
     }
-    
-    printRunningMean(curMeas,myRunningMean);
+    if (curMeas > 2) printRunningMean(curMeas,myRunningMean);
+    else {
+        fprintf(stderr,"ERROR: insufficient data \
+to calculate a running average\n");
+        return EXIT_FAILURE;
+    }
     fclose(inputFile);
     free(myMeasurements); myMeasurements = NULL;
     free(myRunningMean); myRunningMean = NULL;
